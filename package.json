@@ -1,0 +1,20 @@
+{
+	"name": "ol-geocoder",
+	"type": "module",
+	"scripts": {
+		"build": "rollup -c build/config.js",
+		"lint": "npx eslint src/*.js && npx eslint src/*/*.js"
+	},
+	"dependencies": {
+		"ol": "7.5.1"
+	},
+	"devDependencies": {
+		"@rollup/plugin-commonjs": "latest",
+		"@rollup/plugin-json": "latest",
+		"@rollup/plugin-node-resolve": "latest",
+		"@rollup/plugin-terser": "latest",
+		"eslint": "latest",
+		"rollup": "latest",
+		"rollup-plugin-import-css": "latest"
+	}
+}
