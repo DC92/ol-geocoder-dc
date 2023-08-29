@@ -1,5 +1,8 @@
+import '../src/ol-geocoder.css';
+import Geocoder from '../src/base';
+
 //Instantiate with some options and add the Control
-var geocoder = new Geocoder('nominatim', {
+const geocoder = new Geocoder('nominatim', {
 	provider: 'osm',
 	lang: 'en',
 	placeholder: 'Search for ...',
@@ -9,7 +12,7 @@ var geocoder = new Geocoder('nominatim', {
 	keepOpen: true
 });
 
-var map = new ol.Map({
+const map = new ol.Map({
 	target: document.getElementById('map'),
 	view: new ol.View({
 		center: [0, 0],
@@ -20,12 +23,15 @@ var map = new ol.Map({
 	})]
 });
 
+const popup = new ol.Overlay.Popup();
+
 map.addControl(geocoder);
+map.addOverlay(popup);
 
 //Listen when an address is chosen
 geocoder.on('addresschosen', function(evt) {
 	console.info(evt);
 	window.setTimeout(function() {
-		//popup.show(evt.coordinate, evt.address.formatted);
+		popup.show(evt.coordinate, evt.address.formatted);
 	}, 3000);
 });

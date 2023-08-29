@@ -1,31 +1,34 @@
-# OpenLayers Control Geocoder
-<p align="center">
-  <a href="https://travis-ci.org/jonataswalker/ol-geocoder">
-    <img src="https://travis-ci.org/jonataswalker/ol-geocoder.svg?branch=master" alt="build status">
-  </a>
-  <a href="https://www.npmjs.com/package/ol-geocoder">
-    <img src="https://img.shields.io/npm/v/ol-geocoder.svg"
-      alt="npm version">
-  </a>
-  <a href="https://github.com/jonataswalker/ol-geocoder/blob/master/LICENSE">
-    <img src="https://img.shields.io/npm/l/ol-geocoder.svg"
-      alt="license">
-  </a>
-  <a href="https://david-dm.org/jonataswalker/ol-geocoder">
-    <img src="https://david-dm.org/jonataswalker/ol-geocoder/status.svg"
-      alt="dependency status">
-  </a>
-  <a href="https://david-dm.org/jonataswalker/ol-geocoder">
-    <img src="https://david-dm.org/jonataswalker/ol-geocoder/dev-status.svg" alt="devDependency status">
-  </a>
-</p>
+# Status of this repository
+I have quickly setup this repository to take over the ol-geocoder package,
+based on [jonataswalker/ol-geocoder](https://github.com/jonataswalker/ol-geocoder)
+and [kirtan-desai/ol-geocoder](https://github.com/kirtan-desai/ol-geocoder)
 
-A geocoder extension for [OpenLayers](http://openlayers.org/). **Requires** OpenLayers **v3.11.0** or higher.
+I have simplified the npm build
+
+What's available today :
+* Full support of Openlayers 7.5.1
+* Generated dist : You can download /dist/ol-geocoder.* files & include it in your webpage. See example in /example/dist.html
+* Use as module to build a more complex project. See example in /example/module.html
+* npm build & lint are provided : "npm run lint" "npm run build"
+
+What's left to do :
+* Complete this README.md
+* Work existing issues & push from jonataswalker & kirtan-desai repopsitories
+* Define & deliver stable version
+* Deliver in npm, unpkg, cdn, ...
+* Work with jonataswalker & kirtan-desai to define the way the take over can take place
+
+I will be improving this package soon.
+Please come back to this page to follow the evolution
+Fell free to provide comments, improvements, issues & push.
+
+# OpenLayers Control Geocoder
+A geocoder extension for [OpenLayers](http://openlayers.org/). **Requires** OpenLayers **v5.7.0** or higher.
 
 ![geocoder anim](https://raw.githubusercontent.com/jonataswalker/ol-geocoder/screenshots/images/anim.gif)
 
 ## Demo
-You can see [here a demo](http://rawgit.com/jonataswalker/ol-geocoder/master/examples/control-nominatim.html) or on [jsFiddle](http://jsfiddle.net/jonataswalker/c4qv9afb/) if you prefer. There is also a [demo of creating a custom provider](http://rawgit.com/jonataswalker/ol-geocoder/master/examples/custom-provider.html)
+To be developped.
 
 ## Providers
 The plugin supports (for now) the following providers:
@@ -55,25 +58,13 @@ Custom providers must implement the following methods:
 * `results` `{Object}` Parsed JSON response from API call
 
 ## How to use it?
+Download the /dist/*.* directory & use it in your page
 
 ##### NPM
-`npm install ol-geocoder`
+To be developped
 
-##### CDN Hosted - [jsDelivr](https://www.jsdelivr.com/package/npm/ol-geocoder)
-Load CSS and Javascript:
-```HTML
-<link href="https://cdn.jsdelivr.net/npm/ol-geocoder@latest/dist/ol-geocoder.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/ol-geocoder"></script>
-```
-
-##### CDN Hosted - UNPKG
-Load CSS and Javascript:
-```HTML
-<link href="https://unpkg.com/ol-geocoder/dist/ol-geocoder.min.css" rel="stylesheet">
-<script src="https://unpkg.com/ol-geocoder"></script>
-```
-##### Self hosted
-Download [latest release](https://github.com/jonataswalker/ol-geocoder/releases/latest) and (obviously) load CSS and Javascript.
+##### CDN Hosted
+To be developped
 
 ##### Instantiate with some options and add the Control
 ```javascript
