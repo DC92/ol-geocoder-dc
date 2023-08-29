@@ -22,7 +22,7 @@ export default [{
 		terser(),
 	],
 	output: [{
-		name: 'OlGeocoder',
+		name: 'Geocoder',
 		banner,
 		file: 'dist/ol-geocoder.js',
 		format: 'umd',
@@ -40,7 +40,7 @@ export default [{
 		json(),
 	],
 	output: [{
-		name: 'OlGeocoder',
+		name: 'Geocoder',
 		banner,
 		file: 'dist/ol-geocoder-debug.js',
 		format: 'iife',

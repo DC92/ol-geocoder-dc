@@ -6,7 +6,7 @@
  * Please don't modify it : modify src/... & npm run build !
  */
  
-var OlGeocoder = (function () {
+var Geocoder = (function () {
   'use strict';
 
   /**
@@ -6382,10 +6382,10 @@ var OlGeocoder = (function () {
   class Html {
     /**
      * @constructor
-     * @param {Function} base Base class.
+     * @param {object} options Options.
      */
-    constructor(base) {
-      this.options = base.options;
+    constructor(options) {
+      this.options = options;
       this.els = this.createControl();
     }
 
@@ -26102,7 +26102,7 @@ var OlGeocoder = (function () {
       };
       // eslint-disable-next-line unicorn/consistent-function-scoping
       const stopBubbling = (evt) => evt.stopPropagation();
-      const reset = (evt) => {
+      const reset = () => {
         this.els.input.focus();
         this.els.input.value = '';
         this.lastQuery = '';
@@ -26182,7 +26182,7 @@ var OlGeocoder = (function () {
             this.listenMapClick();
           }
         })
-        .catch((err) => {
+        .catch(() => {
           removeClass(this.els.reset, klasses.spin);
 
           const li = createElement('li', '<h5>Error! No internet connection?</h5>');
@@ -26233,7 +26233,7 @@ var OlGeocoder = (function () {
 
       if (bbox) {
         bbox = transformExtent(
-          [bbox[2], bbox[1], bbox[3], bbox[0]], // NSWE -> WSEN
+          [parseFloat(bbox[2]), parseFloat(bbox[0]), parseFloat(bbox[3]), parseFloat(bbox[1])], // SNWE -> WSEN
           'EPSG:4326',
           projection
         );
@@ -26402,8 +26402,6 @@ var OlGeocoder = (function () {
      * @param {object} options Options.
      */
     constructor(type = CONTROL_TYPE.NOMINATIM, options = {}) {
-      if (!(this instanceof Base)) return new Base();
-
       assert(typeof type === 'string', '@param `type` should be string!');
       assert(
         type === CONTROL_TYPE.NOMINATIM || type === CONTROL_TYPE.REVERSE,
@@ -26416,20 +26414,27 @@ var OlGeocoder = (function () {
         new Style$1({ image: new Icon$1({ scale: 0.7, src: FEATURE_SRC }) }),
       ];
 
-      this.options = mergeOptions(DEFAULT_OPTIONS, options);
-      this.container = undefined;
+      let container;
 
       let $nominatim;
 
-      const $html = new Html(this);
+      const $html = new Html(options);
 
       if (type === CONTROL_TYPE.NOMINATIM) {
-        this.container = $html.els.container;
+        container = $html.els.container;
+      }
+
+      super({ element: container });
+
+      if (!(this instanceof Base)) return new Base();
+
+      this.options = mergeOptions(DEFAULT_OPTIONS, options);
+      this.container = container;
+
+      if (type === CONTROL_TYPE.NOMINATIM) {
         $nominatim = new Nominatim(this, $html.els);
         this.layer = $nominatim.layer;
       }
-
-      super({ element: this.container });
     }
 
     /**

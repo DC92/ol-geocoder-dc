@@ -83,7 +83,7 @@ export class Nominatim {
     };
     // eslint-disable-next-line unicorn/consistent-function-scoping
     const stopBubbling = (evt) => evt.stopPropagation();
-    const reset = (evt) => {
+    const reset = () => {
       this.els.input.focus();
       this.els.input.value = '';
       this.lastQuery = '';
@@ -163,7 +163,7 @@ export class Nominatim {
           this.listenMapClick();
         }
       })
-      .catch((err) => {
+      .catch(() => {
         removeClass(this.els.reset, klasses.spin);
 
         const li = createElement('li', '<h5>Error! No internet connection?</h5>');
@@ -214,7 +214,7 @@ export class Nominatim {
 
     if (bbox) {
       bbox = proj.transformExtent(
-        [bbox[2], bbox[1], bbox[3], bbox[0]], // NSWE -> WSEN
+        [parseFloat(bbox[2]), parseFloat(bbox[0]), parseFloat(bbox[3]), parseFloat(bbox[1])], // SNWE -> WSEN
         'EPSG:4326',
         projection
       );
