@@ -6165,17 +6165,17 @@ var Geocoder = (function () {
   function mergeOptions(obj1, obj2) {
     const obj3 = {};
 
-    for (const key in obj1) {
+    Object.keys(obj1).forEach((key) => {
       if (Object.prototype.hasOwnProperty.call(obj1, key)) {
         obj3[key] = obj1[key];
       }
-    }
+    });
 
-    for (const key in obj2) {
+    Object.keys(obj2).forEach((key) => {
       if (Object.prototype.hasOwnProperty.call(obj2, key)) {
         obj3[key] = obj2[key];
       }
-    }
+    });
 
     return obj3;
   }
@@ -6224,7 +6224,6 @@ var Geocoder = (function () {
     return /^\d+$/u.test(str);
   }
 
-  /* eslint-disable optimize-regex/optimize-regex */
   /* eslint-disable prefer-named-capture-group */
 
   /**
@@ -6345,7 +6344,6 @@ var Geocoder = (function () {
   }
 
   function classRegex(classname) {
-    // eslint-disable-next-line security/detect-non-literal-regexp
     return new RegExp(`(^|\\s+) ${classname} (\\s+|$)`, 'u');
   }
 
@@ -26100,7 +26098,6 @@ var Geocoder = (function () {
           this.query(value);
         }
       };
-      // eslint-disable-next-line unicorn/consistent-function-scoping
       const stopBubbling = (evt) => evt.stopPropagation();
       const reset = () => {
         this.els.input.focus();
