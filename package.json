@@ -1,5 +1,13 @@
 {
 	"name": "ol-geocoder",
+	"description": "A geocoder extension for OpenLayers.",
+	"homepage": "https://github.com/Dominique92/ol-geocoder",
+	"license": "MIT",
+	"keywords": [
+		"geocoder",
+		"openlayers",
+		"nominatim"
+	],
 	"type": "module",
 	"scripts": {
 		"build": "rollup -c build/config.js",

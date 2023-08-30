@@ -1,5 +1,6 @@
-import { VARS, TARGET_TYPE } from '../konstants';
+import '../src/html.css';
 
+import { VARS, TARGET_TYPE } from '../konstants';
 import { createElement } from './helpers/dom';
 
 const klasses = VARS.cssClasses;

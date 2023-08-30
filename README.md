@@ -16,6 +16,7 @@ What's left to do :
 * Work existing issues & push from jonataswalker & kirtan-desai repopsitories
 * Define & deliver stable version
 * Deliver in npm, unpkg, cdn, ...
+* Package tests
 * Work with jonataswalker & kirtan-desai to define the way the take over can take place
 
 I will be improving this package soon.

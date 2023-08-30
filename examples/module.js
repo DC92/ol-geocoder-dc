@@ -1,4 +1,3 @@
-import '../src/ol-geocoder.css';
 import Geocoder from '../src/base';
 
 //Instantiate with some options and add the Control

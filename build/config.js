@@ -1,4 +1,6 @@
-import { readFileSync } from 'fs'; // Read banner file
+import {
+	readFileSync, // Read banner file
+} from 'fs';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs'; // Convert CommonJS module into ES module
 import css from 'rollup-plugin-import-css'; // Collect css
@@ -30,7 +32,7 @@ const banner = readFileSync('./build/banner.js', 'utf-8');
 export default [{
 	// Compressed library
 	external,
-	input: 'build/index.js',
+	input: 'src/base.js',
 	plugins: [
 		nodeResolve(),
 		commonjs(),
@@ -51,7 +53,7 @@ export default [{
 }, {
 	// Debug library
 	external,
-	input: 'build/index.js',
+	input: 'src/base.js',
 	plugins: [
 		nodeResolve(),
 		commonjs(),
