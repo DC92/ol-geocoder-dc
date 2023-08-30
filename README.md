@@ -1,38 +1,38 @@
 # OpenLayers Control Geocoder
 A geocoder extension for [OpenLayers](http://openlayers.org/). **Requires** OpenLayers **v5.7.0** or higher.
 
-![geocoder anim](https://raw.githubusercontent.com/jonataswalker/ol-geocoder/screenshots/images/anim.gif)
+## Demos
+
+* [Example using OSM nominatim provider](https://dominique92.github.io/ol-geocoder/examples/control-nominatim.html)
+* [Example using glass button & photon provider](https://dominique92.github.io/ol-geocoder/examples/control-glass.html)
 
 # Status of this repository
 I have quickly setup this repository to take over the ol-geocoder package,
 based on [jonataswalker/ol-geocoder](https://github.com/jonataswalker/ol-geocoder)
 and [kirtan-desai/ol-geocoder](https://github.com/kirtan-desai/ol-geocoder)
 
-I have simplified the npm build
-
 What's available today :
 * Full support of Openlayers 7.5.1
-* Generated dist : You can download /dist/ol-geocoder.* files & include it in your webpage. See example in /example/dist.html
-* Use as module to build a more complex project. See example in /example/module.html
-* npm build & lint are provided : "npm run lint" "npm run build"
+* Generated dist delivery
+* Simplified npm build
+* Lint tests
+* Use as module to build a more complex project. See [example](https://dominique92.github.io/ol-geocoder/examples/module.html).
 
 What's left to do :
-* Complete this README.md
 * Work existing issues & push from jonataswalker & kirtan-desai repopsitories
 * Define & deliver stable version
 * Deliver in npm, unpkg, cdn, ...
 * Test suite
-* Work with jonataswalker & kirtan-desai to define the way the take over can take place
+* No babel is provided (don't support old browsers)
+* css generated from sass
+* Work with Jonatas Walker & Kirtan Desai to define the way the take over can take place
 
 I will be improving this package soon.
 Please come back to this page to follow the evolution
 Fell free to provide comments, improvements, issues & push.
 
-## Demo
-[Example using OSM nominatim provider](https://dominique92.github.io/ol-geocoder/examples/control-nominatim.html)
-[Example using glass button & photon provider](https://dominique92.github.io/ol-geocoder/examples/control-glass.html)
-
 ## Providers
+
 The plugin supports (for now) the following providers:
 
 * [OSM](https://www.openstreetmap.org/)/[Nominatim](https://nominatim.org/) &mdash; `'osm'`.
@@ -42,7 +42,9 @@ The plugin supports (for now) the following providers:
 * [OpenCage](https://opencagedata.com/) &mdash; requires KEY  &mdash; `'opencage'`.
 
 ### Custom Providers
-You can also write your own provider, passing an instance of it to the `Geocoder` constructor via the `provider` property of the options argument.
+
+You can also write your own provider, passing an instance of it to the `Geocoder` constructor
+via the `provider` property of the options argument.
 
 For an example of defining and using a custom provider see [`examples/custom-provider.js`](examples/custom-provider.js)
 
@@ -61,26 +63,32 @@ Custom providers must implement the following methods:
 
 ## How to use it?
 
-##### DOWNLOAD
-Download the full build & sources from [github.com/Dominique92/ol-geocoder](https://github.com/Dominique92/ol-geocoder/archive/refs/heads/main.zip) & use it in your project.
+##### Download package
 
-##### GITHUB
-If you want to try out ol-geocoder without downloading anything (not recommended for production), include the following in the head of your html page:
+Download the full build & sources [ZIP file](https://github.com/Dominique92/ol-geocoder/archive/refs/heads/main.zip)
+from [Dominique92/ol-geocoder](https://github.com/Dominique92/ol-geocoder) & use it in your project.
+
+##### GITHUB Hosted
+If you want to try out ol-geocoder without downloading anything (not recommended for production),
+include the following in the head of your html page:
 ```
     <link rel="stylesheet" href="https://dominique92.github.io/ol-geocoder/dist/ol-geocoder.css">
     <script src="https://dominique92.github.io/ol-geocoder/dist/ol-geocoder.js"></script>
 ```
 
-##### NPM
+##### NPM Hosted
+
 To be developped
 
 ##### CDN Hosted
+
 To be developped
 
 ##### Instantiate with some options and add the Control
 ```javascript
 var geocoder = new Geocoder('nominatim', {
   provider: 'mapquest',
+  url: 'https://nominatim.openstreetmap.org/search',
   key: '__some_key__',
   lang: 'pt-BR', //en-US, fr-FR
   placeholder: 'Search for ...',
@@ -113,6 +121,7 @@ geocoder.on('addresschosen', function(evt){
 
 - `options` is an object with the following possible properties:
   * `provider`             : `'osm'` (default), `'mapquest'`, `'photon'`, `'pelias'`, `'bing'`, `'opencage'`, custom provider instance; Your preferable provider;
+  * `url`                  : `'https://nominatim.openstreetmap.org/search''`; API provider url;
   * `key`                  : `''`; API Key if required;
   * `autoComplete`         : `false`; Search as you type;
   * `autoCompleteMinLength`: `2`; The minimum number of characters to trigger search;
@@ -125,6 +134,8 @@ geocoder.on('addresschosen', function(evt){
   * `countrycodes`         : `''`; Only valid for `osm` and `mapquest`; Limit search results to a specific country (or a list of countries). This is an [ISO 3166-1alpha2 code] (https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2), e.g. `gb` for the United Kingdom, `br` for Brazil, etc;
   * `keepOpen`             : `false`; Whether the results keep openned;
   * `preventDefault`       : `false`; Whether panning (and creating marker) when an address is chosen;
+  * `panning`              : `false`; Whether panning when an address is chosen;
+  * `marker`               : `false`; Whether creating marker when an address is chosen;
   * `debug`                : `false`; If true logs provider's response;
 
 ## Instance Methods

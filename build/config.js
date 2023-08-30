@@ -27,7 +27,8 @@ openlayers.forEach((each) => {
 	globals[each[0]] = each[1];
 });
 
-const banner = readFileSync('./build/banner.js', 'utf-8');
+const banner = readFileSync('./build/banner.js', 'utf-8')
+  .replace('${time}', new Date().toUTCString());
 
 export default [{
 	// Compressed library

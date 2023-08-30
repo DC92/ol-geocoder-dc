@@ -5,9 +5,10 @@ export class OpenStreet {
   /**
    * @constructor
    */
-  constructor() {
+  constructor(options) {
     this.settings = {
       url: 'https://nominatim.openstreetmap.org/search',
+      ...options,
 
       params: {
         q: '',

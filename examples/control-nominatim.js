@@ -19,6 +19,7 @@
   // Instantiate with some options and add the Control
   const geocoder = new Geocoder('nominatim', {
     provider: 'osm',
+    url: 'https://nominatim.openstreetmap.org/search',
     targetType: 'text-input',
     lang: 'en',
     placeholder: 'Search for ...',

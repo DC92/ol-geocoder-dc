@@ -39,6 +39,7 @@ export class Nominatim {
     this.layer = new LayerVector({
       name: this.layerName,
       source: new SourceVector(),
+      displayInLayerSwitcher: false,
     });
 
     this.options = base.options;
@@ -295,7 +296,7 @@ export class Nominatim {
   newProvider() {
     switch (this.options.provider) {
       case PROVIDERS.OSM:
-        return new OpenStreet();
+        return new OpenStreet(this.options);
       case PROVIDERS.MAPQUEST:
         return new MapQuest();
       case PROVIDERS.PHOTON:
