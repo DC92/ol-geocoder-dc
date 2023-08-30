@@ -136,6 +136,7 @@ geocoder.on('addresschosen', function(evt){
   * `preventDefault`       : `false`; When true, prevent panning and creating marker when an address is chosen;
   * `preventPanning`       : `false`; When true, prevent panning, but create marker, when an address is chosen;
   * `preventMarker`        : `false`; When true, prevent creating marker, but provide panning, when an address is chosen;
+  * `defaultFlyResolution` : `1`; (meters per pixel) resolution to fly to when only coords & not bbox is returned by the provider;
   * `debug`                : `false`; If true logs provider's response;
 
 ## Instance Methods

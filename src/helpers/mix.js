@@ -51,10 +51,6 @@ export function now() {
   return window.performance.now();
 }
 
-export function flyTo(map, coord, duration = 500, resolution = 2.388657133911758) {
-  map.getView().animate({ duration, resolution }, { duration, center: coord });
-}
-
 export function randomId(prefix) {
   const id = now().toString(36);
 

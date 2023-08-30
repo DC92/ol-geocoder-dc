@@ -3,7 +3,7 @@
  * https://github.com/Dominique92/ol-geocoder
  * Based on https://openlayers.org
  * From https://github.com/jonataswalker/ol-geocoder & https://github.com/kirtan-desai/ol-geocoder
- * This file has been generated Wed, 30 Aug 2023 18:23:22 GMT by npm run build from the src/... sources
+ * This file has been generated Wed, 30 Aug 2023 19:41:57 GMT by npm run build from the src/... sources
  * Please don't modify it : modify src/... & npm run build !
  */
 
@@ -170,10 +170,6 @@ var Geocoder = (function (Control, Style, Icon, LayerVector, SourceVector, Point
     }
 
     return window.performance.now();
-  }
-
-  function flyTo(map, coord, duration = 500, resolution = 2.388657133911758) {
-    map.getView().animate({ duration, resolution }, { duration, center: coord });
   }
 
   function randomId(prefix) {
@@ -1017,9 +1013,15 @@ var Geocoder = (function (Control, Style, Icon, LayerVector, SourceVector, Point
 
       if (this.options.preventDefault !== true && this.options.preventPanning !== true) {
         if (bbox) {
-          map.getView().fit(bbox, { duration: 500 });
+          map.getView().fit(bbox, {
+            duration: 500,
+          });
         } else {
-          flyTo(map, coord);
+          map.getView().animate({
+            center: coord,
+            resolution: this.options.defaultFlyResolution || 1,
+            duration: 500,
+          });
         }
       }
     }

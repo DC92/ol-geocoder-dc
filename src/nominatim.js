@@ -19,7 +19,7 @@ import { OpenStreet } from './providers/osm';
 import { MapQuest } from './providers/mapquest';
 import { Bing } from './providers/bing';
 import { OpenCage } from './providers/opencage';
-import { randomId, flyTo } from './helpers/mix';
+import { randomId } from './helpers/mix';
 import { json } from './helpers/ajax';
 
 const klasses = VARS.cssClasses;
@@ -251,9 +251,15 @@ export class Nominatim {
 
     if (this.options.preventDefault !== true && this.options.preventPanning !== true) {
       if (bbox) {
-        map.getView().fit(bbox, { duration: 500 });
+        map.getView().fit(bbox, {
+          duration: 500,
+        });
       } else {
-        flyTo(map, coord);
+        map.getView().animate({
+          center: coord,
+          resolution: this.options.defaultFlyResolution || 1,
+          duration: 500,
+        });
       }
     }
   }

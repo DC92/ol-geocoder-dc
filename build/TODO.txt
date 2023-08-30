@@ -10,12 +10,11 @@ css generated from sass
 From https://github.com/jonataswalker/ol-geocoder/issues
 Limit search result to city https://github.com/jonataswalker/ol-geocoder/issues/260
 "countrycodes" option broken with array https://github.com/jonataswalker/ol-geocoder/issues/257
+Using Search Function Outside Div https://github.com/jonataswalker/ol-geocoder/issues/247
 
 Doc :
 Is the timeout necessary? https://github.com/jonataswalker/ol-geocoder/issues/240
-Using Search Function Outside Div https://github.com/jonataswalker/ol-geocoder/issues/247
 Some 404 errors, unable to access content https://github.com/jonataswalker/ol-geocoder/issues/236
-ol-geocoder results are too much zoomed -in https://github.com/jonataswalker/ol-geocoder/issues/235
 
 Unknown :
 Warning when using ol-geocoder from the CDN https://github.com/jonataswalker/ol-geocoder/issues/250
@@ -29,3 +28,4 @@ Done :
 Allow custom URL for osm provider https://github.com/jonataswalker/ol-geocoder/issues/266
 Remove search layer from legend https://github.com/jonataswalker/ol-geocoder/issues/256
 Toggle Marker in Options https://github.com/jonataswalker/ol-geocoder/issues/239
+ol-geocoder results are too much zoomed -in https://github.com/jonataswalker/ol-geocoder/issues/235
