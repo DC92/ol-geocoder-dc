@@ -1,3 +1,8 @@
+# OpenLayers Control Geocoder
+A geocoder extension for [OpenLayers](http://openlayers.org/). **Requires** OpenLayers **v5.7.0** or higher.
+
+![geocoder anim](https://raw.githubusercontent.com/jonataswalker/ol-geocoder/screenshots/images/anim.gif)
+
 # Status of this repository
 I have quickly setup this repository to take over the ol-geocoder package,
 based on [jonataswalker/ol-geocoder](https://github.com/jonataswalker/ol-geocoder)
@@ -16,20 +21,16 @@ What's left to do :
 * Work existing issues & push from jonataswalker & kirtan-desai repopsitories
 * Define & deliver stable version
 * Deliver in npm, unpkg, cdn, ...
-* Package tests
+* Test suite
 * Work with jonataswalker & kirtan-desai to define the way the take over can take place
 
 I will be improving this package soon.
 Please come back to this page to follow the evolution
 Fell free to provide comments, improvements, issues & push.
 
-# OpenLayers Control Geocoder
-A geocoder extension for [OpenLayers](http://openlayers.org/). **Requires** OpenLayers **v5.7.0** or higher.
-
-![geocoder anim](https://raw.githubusercontent.com/jonataswalker/ol-geocoder/screenshots/images/anim.gif)
-
 ## Demo
-To be developped.
+[Example using OSM nominatim provider](https://dominique92.github.io/ol-geocoder/examples/control-nominatim.html)
+[Example using glass button & photon provider](https://dominique92.github.io/ol-geocoder/examples/control-glass.html)
 
 ## Providers
 The plugin supports (for now) the following providers:
@@ -59,7 +60,16 @@ Custom providers must implement the following methods:
 * `results` `{Object}` Parsed JSON response from API call
 
 ## How to use it?
-Download the /dist/*.* directory & use it in your page
+
+##### DOWNLOAD
+Download the full build & sources from [github.com/Dominique92/ol-geocoder](https://github.com/Dominique92/ol-geocoder/archive/refs/heads/main.zip) & use it in your project.
+
+##### GITHUB
+If you want to try out ol-geocoder without downloading anything (not recommended for production), include the following in the head of your html page:
+```
+    <link rel="stylesheet" href="https://dominique92.github.io/ol-geocoder/dist/ol-geocoder.css">
+    <script src="https://dominique92.github.io/ol-geocoder/dist/ol-geocoder.js"></script>
+```
 
 ##### NPM
 To be developped
