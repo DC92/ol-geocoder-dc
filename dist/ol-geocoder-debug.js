@@ -3,7 +3,7 @@
  * https://github.com/Dominique92/ol-geocoder
  * Based on https://openlayers.org
  * From https://github.com/jonataswalker/ol-geocoder & https://github.com/kirtan-desai/ol-geocoder
- * This file has been generated Wed, 30 Aug 2023 16:20:37 GMT by npm run build from the src/... sources
+ * This file has been generated Wed, 30 Aug 2023 18:23:22 GMT by npm run build from the src/... sources
  * Please don't modify it : modify src/... & npm run build !
  */
 
@@ -477,6 +477,7 @@ var Geocoder = (function (Control, Style, Icon, LayerVector, SourceVector, Point
     constructor(options) {
       this.settings = {
         url: 'https://nominatim.openstreetmap.org/search',
+        ...options,
 
         params: {
           q: '',
@@ -486,7 +487,6 @@ var Geocoder = (function (Control, Style, Icon, LayerVector, SourceVector, Point
           countrycodes: '',
           'accept-language': 'en-US',
         },
-        ...options,
       };
     }
 
@@ -994,7 +994,7 @@ var Geocoder = (function (Control, Style, Icon, LayerVector, SourceVector, Point
 
       this.options.keepOpen === false && this.clearResults(true);
 
-      if (this.options.preventDefault === true) {
+      if (this.options.preventDefault === true || this.options.preventMarker === true) {
         this.Base.dispatchEvent({
           type: EVENT_TYPE.ADDRESSCHOSEN,
           address,
@@ -1003,12 +1003,6 @@ var Geocoder = (function (Control, Style, Icon, LayerVector, SourceVector, Point
           place,
         });
       } else {
-        if (bbox) {
-          map.getView().fit(bbox, { duration: 500 });
-        } else {
-          flyTo(map, coord);
-        }
-
         const feature = this.createFeature(coord, address);
 
         this.Base.dispatchEvent({
@@ -1019,6 +1013,14 @@ var Geocoder = (function (Control, Style, Icon, LayerVector, SourceVector, Point
           bbox,
           place,
         });
+      }
+
+      if (this.options.preventDefault !== true && this.options.preventPanning !== true) {
+        if (bbox) {
+          map.getView().fit(bbox, { duration: 500 });
+        } else {
+          flyTo(map, coord);
+        }
       }
     }
 

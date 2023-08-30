@@ -10,7 +10,6 @@ css generated from sass
 From https://github.com/jonataswalker/ol-geocoder/issues
 Limit search result to city https://github.com/jonataswalker/ol-geocoder/issues/260
 "countrycodes" option broken with array https://github.com/jonataswalker/ol-geocoder/issues/257
-Toggle Marker in Options https://github.com/jonataswalker/ol-geocoder/issues/239
 
 Doc :
 Is the timeout necessary? https://github.com/jonataswalker/ol-geocoder/issues/240
@@ -28,4 +27,5 @@ Add IE support
 
 Done :
 Allow custom URL for osm provider https://github.com/jonataswalker/ol-geocoder/issues/266
-[Remove search layer from legend](https://github.com/jonataswalker/ol-geocoder/issues/256)
+Remove search layer from legend https://github.com/jonataswalker/ol-geocoder/issues/256
+Toggle Marker in Options https://github.com/jonataswalker/ol-geocoder/issues/239

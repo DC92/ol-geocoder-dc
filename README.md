@@ -133,9 +133,9 @@ geocoder.on('addresschosen', function(evt){
   * `limit`                : `5`; Limit of results;
   * `countrycodes`         : `''`; Only valid for `osm` and `mapquest`; Limit search results to a specific country (or a list of countries). This is an [ISO 3166-1alpha2 code] (https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2), e.g. `gb` for the United Kingdom, `br` for Brazil, etc;
   * `keepOpen`             : `false`; Whether the results keep openned;
-  * `preventDefault`       : `false`; Whether panning (and creating marker) when an address is chosen;
-  * `panning`              : `false`; Whether panning when an address is chosen;
-  * `marker`               : `false`; Whether creating marker when an address is chosen;
+  * `preventDefault`       : `false`; When true, prevent panning and creating marker when an address is chosen;
+  * `preventPanning`       : `false`; When true, prevent panning, but create marker, when an address is chosen;
+  * `preventMarker`        : `false`; When true, prevent creating marker, but provide panning, when an address is chosen;
   * `debug`                : `false`; If true logs provider's response;
 
 ## Instance Methods

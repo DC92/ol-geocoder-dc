@@ -228,7 +228,7 @@ export class Nominatim {
 
     this.options.keepOpen === false && this.clearResults(true);
 
-    if (this.options.preventDefault === true) {
+    if (this.options.preventDefault === true || this.options.preventMarker === true) {
       this.Base.dispatchEvent({
         type: EVENT_TYPE.ADDRESSCHOSEN,
         address,
@@ -237,12 +237,6 @@ export class Nominatim {
         place,
       });
     } else {
-      if (bbox) {
-        map.getView().fit(bbox, { duration: 500 });
-      } else {
-        flyTo(map, coord);
-      }
-
       const feature = this.createFeature(coord, address);
 
       this.Base.dispatchEvent({
@@ -253,6 +247,14 @@ export class Nominatim {
         bbox,
         place,
       });
+    }
+
+    if (this.options.preventDefault !== true && this.options.preventPanning !== true) {
+      if (bbox) {
+        map.getView().fit(bbox, { duration: 500 });
+      } else {
+        flyTo(map, coord);
+      }
     }
   }
 
