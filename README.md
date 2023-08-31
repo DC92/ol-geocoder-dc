@@ -19,7 +19,6 @@ What's available today :
 * Use as module to build a more complex project. See [example](https://dominique92.github.io/ol-geocoder/examples/module.html).
 
 What's left to do :
-* Work existing issues & push from jonataswalker & kirtan-desai repopsitories
 * Define & deliver stable version
 * Deliver in npm, unpkg, cdn, ...
 * Test suite

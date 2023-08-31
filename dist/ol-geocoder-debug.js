@@ -3,10 +3,9 @@
  * https://github.com/Dominique92/ol-geocoder
  * Based on https://openlayers.org
  * From https://github.com/jonataswalker/ol-geocoder & https://github.com/kirtan-desai/ol-geocoder
- * This file has been generated Thu, 31 Aug 2023 08:53:34 GMT by npm run build from the src/... sources
+ * This file has been generated Thu, 31 Aug 2023 12:09:09 GMT by npm run build from the src/... sources
  * Please don't modify it : modify src/... & npm run build !
  */
-
 var Geocoder = (function (Control, Style, Icon, LayerVector, SourceVector, Point, Feature, proj) {
   'use strict';
 
@@ -274,7 +273,9 @@ var Geocoder = (function (Control, Style, Icon, LayerVector, SourceVector, Point
       if (node[1].classname) elem.className = node[1].classname;
 
       if (node[1].attr) {
-        const { attr } = node[1];
+        const {
+          attr
+        } = node[1];
 
         if (Array.isArray(attr)) {
           let i = -1;
@@ -353,7 +354,10 @@ var Geocoder = (function (Control, Style, Icon, LayerVector, SourceVector, Point
       if (this.options.targetType === TARGET_TYPE.INPUT) {
         containerClass = `${klasses$1.namespace} ${klasses$1.inputText.container}`;
         container = createElement(
-          ['div', { id: VARS.containerId, classname: containerClass }],
+          ['div', {
+            id: VARS.containerId,
+            classname: containerClass
+          }],
           Html.input
         );
         elements = {
@@ -366,7 +370,10 @@ var Geocoder = (function (Control, Style, Icon, LayerVector, SourceVector, Point
       } else {
         containerClass = `${klasses$1.namespace} ${klasses$1.glass.container}`;
         container = createElement(
-          ['div', { id: VARS.containerId, classname: containerClass }],
+          ['div', {
+            id: VARS.containerId,
+            classname: containerClass
+          }],
           Html.glass
         );
         elements = {
@@ -621,8 +628,7 @@ var Geocoder = (function (Control, Style, Icon, LayerVector, SourceVector, Point
           query: options.query,
           key: options.key,
 
-          includeNeighborhood:
-            options.includeNeighborhood || this.settings.params.includeNeighborhood,
+          includeNeighborhood: options.includeNeighborhood || this.settings.params.includeNeighborhood,
 
           maxResults: options.maxResults || this.settings.params.maxResults,
         },
@@ -630,7 +636,9 @@ var Geocoder = (function (Control, Style, Icon, LayerVector, SourceVector, Point
     }
 
     handleResponse(results) {
-      const { resources } = results.resourceSets[0];
+      const {
+        resources
+      } = results.resourceSets[0];
 
       if (resources.length === 0) return [];
 
@@ -733,9 +741,9 @@ var Geocoder = (function (Control, Style, Icon, LayerVector, SourceVector, Point
     return Object.keys(obj)
       .reduce((acc, k) => {
         acc.push(
-          typeof obj[k] === 'object'
-            ? toQueryString(obj[k])
-            : `${encodeURIComponent(k)}=${encodeURIComponent(obj[k])}`
+          typeof obj[k] === 'object' ?
+          toQueryString(obj[k]) :
+          `${encodeURIComponent(k)}=${encodeURIComponent(obj[k])}`
         );
 
         return acc;
@@ -753,7 +761,9 @@ var Geocoder = (function (Control, Style, Icon, LayerVector, SourceVector, Point
 
   function jsonp(url, key, callback) {
     // https://github.com/Fresheyeball/micro-jsonp/blob/master/src/jsonp.js
-    const { head } = document;
+    const {
+      head
+    } = document;
     const script = document.createElement('script');
     // generate minimally unique name for callback function
     const callbackName = `f${Math.round(Math.random() * Date.now())}`;
@@ -808,15 +818,17 @@ var Geocoder = (function (Control, Style, Icon, LayerVector, SourceVector, Point
       // provider is either the name of a built-in provider as a string or an
       // object that implements the provider API
       this.options.provider =
-        typeof this.options.provider === 'string'
-          ? this.options.provider.toLowerCase()
-          : this.options.provider;
+        typeof this.options.provider === 'string' ?
+        this.options.provider.toLowerCase() :
+        this.options.provider;
       this.provider = this.newProvider();
 
       this.els = els;
       this.lastQuery = '';
       this.container = this.els.container;
-      this.registeredListeners = { mapClick: false };
+      this.registeredListeners = {
+        mapClick: false
+      };
       this.setListeners();
     }
 
@@ -831,13 +843,13 @@ var Geocoder = (function (Control, Style, Icon, LayerVector, SourceVector, Point
       };
       const query = (evt) => {
         const value = evt.target.value.trim();
-        const hit = evt.key
-          ? evt.key === 'Enter'
-          : evt.which
-          ? evt.which === 13
-          : evt.keyCode
-          ? evt.keyCode === 13
-          : false;
+        const hit = evt.key ?
+          evt.key === 'Enter' :
+          evt.which ?
+          evt.which === 13 :
+          evt.keyCode ?
+          evt.keyCode === 13 :
+          false;
 
         if (hit) {
           evt.preventDefault();
@@ -855,9 +867,9 @@ var Geocoder = (function (Control, Style, Icon, LayerVector, SourceVector, Point
       const handleValue = (evt) => {
         const value = evt.target.value.trim();
 
-        value.length !== 0
-          ? removeClass(this.els.reset, klasses.hidden)
-          : addClass(this.els.reset, klasses.hidden);
+        value.length !== 0 ?
+          removeClass(this.els.reset, klasses.hidden) :
+          addClass(this.els.reset, klasses.hidden);
 
         if (this.options.autoComplete && value !== lastQuery) {
           lastQuery = value;
@@ -972,7 +984,9 @@ var Geocoder = (function (Control, Style, Icon, LayerVector, SourceVector, Point
       const projection = map.getView().getProjection();
       const coord = proj__namespace.transform(coord_, 'EPSG:4326', projection);
 
-      let { bbox } = place;
+      let {
+        bbox
+      } = place;
 
       if (bbox) {
         bbox = proj__namespace.transformExtent(
@@ -1107,8 +1121,7 @@ var Geocoder = (function (Control, Style, Icon, LayerVector, SourceVector, Point
 
       // one-time fire click
       mapElement.addEventListener(
-        'click',
-        {
+        'click', {
           handleEvent(evt) {
             that.clearResults(true);
             mapElement.removeEventListener(evt.type, this, false);
@@ -1120,9 +1133,9 @@ var Geocoder = (function (Control, Style, Icon, LayerVector, SourceVector, Point
     }
 
     clearResults(collapse) {
-      collapse && this.options.targetType === TARGET_TYPE.GLASS
-        ? this.collapse()
-        : removeAllChildren(this.els.result);
+      collapse && this.options.targetType === TARGET_TYPE.GLASS ?
+        this.collapse() :
+        removeAllChildren(this.els.result);
     }
 
     getSource() {
@@ -1162,7 +1175,12 @@ var Geocoder = (function (Control, Style, Icon, LayerVector, SourceVector, Point
       assert(typeof options === 'object', '@param `options` should be object!');
 
       DEFAULT_OPTIONS.featureStyle = [
-        new Style({ image: new Icon({ scale: 0.7, src: FEATURE_SRC }) }),
+        new Style({
+          image: new Icon({
+            scale: 0.7,
+            src: FEATURE_SRC
+          })
+        }),
       ];
 
       let container;
@@ -1175,7 +1193,9 @@ var Geocoder = (function (Control, Style, Icon, LayerVector, SourceVector, Point
         container = $html.els.container;
       }
 
-      super({ element: container });
+      super({
+        element: container
+      });
 
       if (!(this instanceof Base)) return new Base();
 

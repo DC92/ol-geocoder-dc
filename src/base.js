@@ -2,11 +2,22 @@ import Control from 'ol/control/Control';
 import Style from 'ol/style/Style';
 import Icon from 'ol/style/Icon';
 
-import { CONTROL_TYPE, DEFAULT_OPTIONS, FEATURE_SRC } from '../konstants';
+import {
+  CONTROL_TYPE,
+  DEFAULT_OPTIONS,
+  FEATURE_SRC
+} from '../konstants';
 
-import { Html } from './html';
-import { Nominatim } from './nominatim';
-import { assert, mergeOptions } from './helpers/mix';
+import {
+  Html
+} from './html';
+import {
+  Nominatim
+} from './nominatim';
+import {
+  assert,
+  mergeOptions
+} from './helpers/mix';
 
 /**
  * @class Base
@@ -28,7 +39,12 @@ export default class Base extends Control {
     assert(typeof options === 'object', '@param `options` should be object!');
 
     DEFAULT_OPTIONS.featureStyle = [
-      new Style({ image: new Icon({ scale: 0.7, src: FEATURE_SRC }) }),
+      new Style({
+        image: new Icon({
+          scale: 0.7,
+          src: FEATURE_SRC
+        })
+      }),
     ];
 
     let container;
@@ -41,7 +57,9 @@ export default class Base extends Control {
       container = $html.els.container;
     }
 
-    super({ element: container });
+    super({
+      element: container
+    });
 
     if (!(this instanceof Base)) return new Base();
 
