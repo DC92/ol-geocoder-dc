@@ -128,13 +128,15 @@ geocoder.on('addresschosen', function(evt){
   * `featureStyle`         : `ol.style.Style`; Feature style;
   * `lang`                 : `'en-US'`; Preferable language;
   * `limit`                : `5`; Limit of results;
-  * `countrycodes`         : `''`; Only valid for `osm` and `mapquest`; Limit search results to a specific country (or a list of countries). This is an [ISO 3166-1alpha2 code] (https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2), e.g. `gb` for the United Kingdom, `br` for Brazil, etc;
+  * `countrycodes`         : `''`; Only valid for `osm` and `mapquest`; Limit search results to a specific country (or a list of country codes separated with commas `FR,US`). This is an [ISO 3166-1alpha2 code] (https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2), e.g. `gb` for the United Kingdom, `br` for Brazil, etc;
+  * `viewbox`              : `''`; The preferred area to find search results. Any two corner points of the box are accepted as long as they span a real box. '<x1>,<y1>,<x2>,<y2>' x is longitude, y is latitude (EPSG:4326);
   * `keepOpen`             : `false`; Whether the results keep openned;
   * `preventDefault`       : `false`; When true, prevent panning and creating marker when an address is chosen;
   * `preventPanning`       : `false`; When true, prevent panning, but create marker, when an address is chosen;
   * `preventMarker`        : `false`; When true, prevent creating marker, but provide panning, when an address is chosen;
-  * `defaultFlyResolution` : `1`; (meters per pixel) resolution to fly to when only coords & not bbox is returned by the provider;
+  * `defaultFlyResolution` : `1`; (meters per pixel) resolution to fly to when only coords & not extent is returned by the provider;
   * `debug`                : `false`; If true logs provider's response;
+  * ... any option of [ol.control.Control](https://openlayers.org/en/latest/apidoc/module-ol_control_Control-Control.html#Control)
 
 ## Instance Methods
 

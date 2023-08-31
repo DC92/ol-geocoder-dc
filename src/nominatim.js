@@ -138,6 +138,7 @@ export class Nominatim {
       key: this.options.key,
       lang: this.options.lang,
       countrycodes: this.options.countrycodes,
+      viewbox: this.options.viewbox,
       limit: this.options.limit,
     });
 

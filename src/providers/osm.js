@@ -16,6 +16,7 @@ export default class OpenStreet {
         addressdetails: 1,
         limit: 10,
         countrycodes: '',
+        viewbox: '',
         'accept-language': 'en-US',
       },
     };
@@ -31,6 +32,7 @@ export default class OpenStreet {
         addressdetails: this.settings.params.addressdetails,
         limit: opt.limit || this.settings.params.limit,
         countrycodes: opt.countrycodes || this.settings.params.countrycodes,
+        viewbox: opt.viewbox || this.settings.params.viewbox,
         'accept-language': opt.lang || this.settings.params['accept-language'],
       },
     };
