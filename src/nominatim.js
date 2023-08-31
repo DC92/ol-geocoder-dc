@@ -3,14 +3,12 @@ import SourceVector from 'ol/source/Vector';
 import Point from 'ol/geom/Point';
 import Feature from 'ol/Feature';
 import * as proj from 'ol/proj';
-
 import {
   VARS,
   TARGET_TYPE,
   PROVIDERS,
   EVENT_TYPE
 } from '../konstants';
-
 import {
   hasClass,
   addClass,
@@ -19,21 +17,11 @@ import {
   template,
   removeAllChildren,
 } from './helpers/dom';
-import {
-  Photon
-} from './providers/photon';
-import {
-  OpenStreet
-} from './providers/osm';
-import {
-  MapQuest
-} from './providers/mapquest';
-import {
-  Bing
-} from './providers/bing';
-import {
-  OpenCage
-} from './providers/opencage';
+import Photon from './providers/photon';
+import OpenStreet from './providers/osm';
+import MapQuest from './providers/mapquest';
+import Bing from './providers/bing';
+import OpenCage from './providers/opencage';
 import {
   randomId
 } from './helpers/mix';

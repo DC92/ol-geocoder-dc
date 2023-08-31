@@ -12,7 +12,8 @@ based on [jonataswalker/ol-geocoder](https://github.com/jonataswalker/ol-geocode
 and [kirtan-desai/ol-geocoder](https://github.com/kirtan-desai/ol-geocoder)
 
 What's available today :
-* Full support of Openlayers 7.5.1
+* Full support of Openlayers 7.5.2
+* No babel is provided (don't support old browsers)
 * Generated dist delivery
 * Simplified npm build
 * Lint tests
@@ -22,12 +23,9 @@ What's left to do :
 * Define & deliver stable version
 * Deliver in npm, unpkg, cdn, ...
 * Test suite
-* No babel is provided (don't support old browsers)
 * css generated from sass
 * Work with Jonatas Walker & Kirtan Desai to define the way the take over can take place
 
-I will be improving this package soon.
-Please come back to this page to follow the evolution
 Fell free to provide comments, improvements, issues & push.
 
 ## Providers

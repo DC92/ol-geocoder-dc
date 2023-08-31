@@ -5,6 +5,9 @@ Accept push, issues, ...
 Version management
 Test suite
 css generated from sass
+Test with modules without vite
+beautify automatically
+Sortir myol de dev
 
 From https://github.com/jonataswalker/ol-geocoder/issues
 Limit search result to city https://github.com/jonataswalker/ol-geocoder/issues/260

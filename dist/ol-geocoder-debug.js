@@ -3,7 +3,7 @@
  * https://github.com/Dominique92/ol-geocoder
  * Based on https://openlayers.org
  * From https://github.com/jonataswalker/ol-geocoder & https://github.com/kirtan-desai/ol-geocoder
- * This file has been generated Thu, 31 Aug 2023 12:09:09 GMT by npm run build from the src/... sources
+ * This file has been generated Thu, 31 Aug 2023 18:23:47 GMT by npm run build from the src/... sources
  * Please don't modify it : modify src/... & npm run build !
  */
 var Geocoder = (function (Control, Style, Icon, LayerVector, SourceVector, Point, Feature, proj) {
@@ -1183,9 +1183,7 @@ var Geocoder = (function (Control, Style, Icon, LayerVector, SourceVector, Point
         }),
       ];
 
-      let container;
-
-      let $nominatim;
+      let container, $nominatim;
 
       const $html = new Html(options);
 
@@ -1194,7 +1192,8 @@ var Geocoder = (function (Control, Style, Icon, LayerVector, SourceVector, Point
       }
 
       super({
-        element: container
+        element: container,
+        ...options,
       });
 
       if (!(this instanceof Base)) return new Base();
