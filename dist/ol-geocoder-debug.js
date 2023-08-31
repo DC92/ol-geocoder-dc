@@ -3,7 +3,7 @@
  * https://github.com/Dominique92/ol-geocoder
  * Based on https://openlayers.org
  * From https://github.com/jonataswalker/ol-geocoder & https://github.com/kirtan-desai/ol-geocoder
- * This file has been generated Wed, 30 Aug 2023 19:41:57 GMT by npm run build from the src/... sources
+ * This file has been generated Thu, 31 Aug 2023 08:53:34 GMT by npm run build from the src/... sources
  * Please don't modify it : modify src/... & npm run build !
  */
 
