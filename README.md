@@ -1,32 +1,15 @@
 # OpenLayers Control Geocoder
-A geocoder extension for [OpenLayers](http://openlayers.org/). **Requires** OpenLayers **v5.7.0** or higher.
+A geocoder extension for [OpenLayers](http://openlayers.org/) v8.0.0++.
+based on [jonataswalker/ol-geocoder](https://github.com/jonataswalker/ol-geocoder)
+and [kirtan-desai/ol-geocoder](https://github.com/kirtan-desai/ol-geocoder)
+that is no longer maintained today.
 
 ## Demos
 
 * [Example using OSM nominatim provider](https://dominique92.github.io/ol-geocoder/examples/control-nominatim.html)
 * [Example using glass button & photon provider](https://dominique92.github.io/ol-geocoder/examples/control-glass.html)
-
-# Status of this repository
-I have quickly setup this repository to take over the ol-geocoder package,
-based on [jonataswalker/ol-geocoder](https://github.com/jonataswalker/ol-geocoder)
-and [kirtan-desai/ol-geocoder](https://github.com/kirtan-desai/ol-geocoder)
-
-What's available today :
-* Full support of Openlayers 7.5.2
-* No babel is provided (don't support old browsers)
-* Generated dist delivery
-* Simplified npm build
-* Lint tests
-* Use as module to build a more complex project. See [example](https://dominique92.github.io/ol-geocoder/examples/module.html).
-
-What's left to do :
-* Define & deliver stable version
-* Deliver in npm, unpkg, cdn, ...
-* Test suite
-* css generated from sass
-* Work with Jonatas Walker & Kirtan Desai to define the way the take over can take place
-
-Fell free to provide comments, improvements, issues & push.
+* [Example using a custom provider](https://dominique92.github.io/ol-geocoder/examples/custom-provider.html)
+* [Example with the control outside of the map](https://dominique92.github.io/ol-geocoder/examples/external-div.html)
 
 ## Providers
 
