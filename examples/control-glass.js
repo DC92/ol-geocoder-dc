@@ -1,3 +1,5 @@
+console.log('Ol v' + ol.util.VERSION);
+
 const olview = new ol.View({
   center: [0, 0],
   zoom: 3,
