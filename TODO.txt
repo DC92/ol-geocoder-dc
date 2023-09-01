@@ -13,3 +13,17 @@ Work with Jonatas Walker & Kirtan Desai to define the way the take over can take
 
 To be done in DOGP
 Nothing
+
+Test done
+7.5.3
+7.5.0
+7.4.0
+7.3.0
+7.2.2
+ko
+7.2.1
+7.2.0
+7.1.0
+7.0.0
+6.15.1
+6.15.0
